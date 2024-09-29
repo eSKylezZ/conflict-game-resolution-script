@@ -8,6 +8,7 @@ from io import BytesIO
 import subprocess
 import webbrowser
 import os
+import sys
 
 # Registry paths for each game, Each path will be checked to allow for compatiblity between 32bit and 64 bit OSs and differences between pre windows 8 and windows 10+
 reg_paths = {
@@ -159,11 +160,17 @@ app.resizable(False, False)  # Disable resizing
 tab_control = ttk.Notebook(app)
 
 games = ["Conflict Desert Storm", "Conflict Desert Storm 2", "Conflict Vietnam", "Conflict Global Storm"]
+
+if hasattr(sys, '_MEIPASS'):
+    base_path = sys._MEIPASS
+else:
+    base_path = os.path.abspath(".")
+
 image_paths = [
-    "images/CD-BoxArt.jpg",
-    "images/CD2-BoxArt.jpg",
-    "images/Vietnam-BoxArt.jpg",
-    "images/Global-BoxArt.jpg"
+    os.path.join(base_path, "images/CD-BoxArt.jpg"),
+    os.path.join(base_path, "images/CD2-BoxArt.jpg"),
+    os.path.join(base_path, "images/Vietnam-BoxArt.jpg"),
+    os.path.join(base_path, "images/Global-BoxArt.jpg")
 ]
 urls = [
     ["https://github.com/eSKylezZ", "https://www.pcgamingwiki.com/wiki/Conflict:_Desert_Storm"],

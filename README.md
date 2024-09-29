@@ -48,6 +48,7 @@ from io import BytesIO
 import subprocess
 import webbrowser
 import os
+import sys
 ```
 
 ### Registry Key Paths
@@ -72,9 +73,6 @@ import os
 
 ### Dependencies
 
-- tkinter (Built Into Python)
-- winreg (Built Into Python)
-- PIL (Built Into Python)
 - pystray
 - requests
 - PyInstaller (Only used for building the .EXEs)

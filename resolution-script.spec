@@ -1,5 +1,9 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+# Import necessary modules
+from PyInstaller.utils.hooks import collect_data_files
+import os
+
 datas = [
     ('images/CD-BoxArt.jpg', 'images'),
     ('images/CD2-BoxArt.jpg', 'images'),
