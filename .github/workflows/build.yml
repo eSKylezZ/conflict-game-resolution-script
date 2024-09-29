@@ -23,7 +23,7 @@ jobs:
           python -m PyInstaller resolution-script.spec
       - name: Rename executable
         run: |
-          rename dist\resolution-script.exe dist\resolution-script-x64.exe
+          Move-Item -Path dist\resolution-script.exe -Destination dist\resolution-script-x64.exe
       - name: List dist directory contents
         run: |
           dir dist
@@ -64,7 +64,7 @@ jobs:
           python -m PyInstaller resolution-script.spec
       - name: Rename executable
         run: |
-          rename dist\resolution-script.exe dist\resolution-script-x86.exe
+          Move-Item -Path dist\resolution-script.exe -Destination dist\resolution-script-x86.exe
       - name: List dist directory contents
         run: |
           dir dist
