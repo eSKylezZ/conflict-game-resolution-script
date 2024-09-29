@@ -21,6 +21,9 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
+      - name: Rename executable
+        run: |
+          rename dist\resolution-script.exe dist\resolution-script-x64.exe
       - name: List dist directory contents
         run: |
           dir dist
@@ -28,14 +31,18 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Windows_ResolutionScript
-          path: dist/resolution-script.exe
+          path: dist/resolution-script-x64.exe
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/resolution-script.exe
+          files: dist/resolution-script-x64.exe
           tag_name: ${{ github.event.head_commit.message }}
           name: ${{ github.event.head_commit.message }}
+          body: |
+            This release includes the following executables:
+            - **resolution-script-x64.exe**: For 64-bit Windows
+            - **resolution-script-x86.exe**: For 32-bit Windows
           draft: false
           prerelease: false
 
@@ -55,6 +62,9 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
+      - name: Rename executable
+        run: |
+          rename dist\resolution-script.exe dist\resolution-script-x86.exe
       - name: List dist directory contents
         run: |
           dir dist
@@ -62,13 +72,17 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Windows_ResolutionScript
-          path: dist/resolution-script.exe
+          path: dist/resolution-script-x86.exe
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/resolution-script.exe
+          files: dist/resolution-script-x86.exe
           tag_name: ${{ github.event.head_commit.message }}
           name: ${{ github.event.head_commit.message }}
+          body: |
+            This release includes the following executables:
+            - **resolution-script-x64.exe**: For 64-bit Windows
+            - **resolution-script-x86.exe**: For 32-bit Windows
           draft: false
           prerelease: false
