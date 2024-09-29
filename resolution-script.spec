@@ -1,5 +1,10 @@
-# -*- mode: python ; coding: utf-8 -*-
+# resolution-script.spec
 
+# Import necessary modules
+from PyInstaller.utils.hooks import collect_data_files
+import os
+
+# Define the data files to include
 datas = [
     ('images/CD-BoxArt.jpg', 'images'),
     ('images/CD2-BoxArt.jpg', 'images'),
@@ -7,27 +12,28 @@ datas = [
     ('images/Global-BoxArt.jpg', 'images')
 ]
 
+# Define the Analysis object
 a = Analysis(
     ['resolution-script.py'],
-    pathex=[],
+    pathex=['.'],
     binaries=[],
-    datas=[],
+    datas=datas,
     hiddenimports=[],
     hookspath=[],
-    hooksconfig={},
     runtime_hooks=[],
     excludes=[],
-    noarchive=False,
-    optimize=0,
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
 )
-pyz = PYZ(a.pure)
 
+# Define the rest of the spec file as usual
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
+    exclude_binaries=True,
     name='resolution-script',
     debug=False,
     bootloader_ignore_signals=False,
@@ -36,9 +42,14 @@ exe = EXE(
     upx_exclude=[],
     runtime_tmpdir=None,
     console=True,
-    disable_windowed_traceback=False,
-    argv_emulation=False,
-    target_arch=None,
-    codesign_identity=None,
-    entitlements_file=None,
+)
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.zipfiles,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='resolution-script'
 )
