@@ -11,7 +11,7 @@ a = Analysis(
     ['resolution-script.py'],
     pathex=[],
     binaries=[],
-    datas=[datas],
+    datas=datas,
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
