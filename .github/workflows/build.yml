@@ -21,18 +21,21 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
+      - name: List dist directory contents
+        run: |
+          dir dist
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Windows_ResolutionScript
-          path: dist/resolution-script-x64.exe
+          path: dist/resolution-script.exe
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/resolution-script-x64.exe
+          files: dist/resolution-script.exe
           tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ github.event.head_commit.message }}
+          name: ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
 
@@ -52,17 +55,20 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
+      - name: List dist directory contents
+        run: |
+          dir dist
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Windows_ResolutionScript
-          path: dist/resolution-script-x86.exe
+          path: dist/resolution-script.exe
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/resolution-script-x86.exe
+          files: dist/resolution-script.exe
           tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ github.event.head_commit.message }}
+          name: ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
