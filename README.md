@@ -1,6 +1,6 @@
 # Conflict Game Resolution Setter
 
-This Python script allows you to set the screen resolution for various games in the "Conflict" series by modifying the Windows registry. The script uses the `tkinter` library for the GUI, `winreg` for registry operations, and `pystray` for system tray integration.
+This Python script allows you to set the screen resolution for various games in the "Conflict" series by modifying the Windows registry. The script uses the `tkinter` library for the GUI, `winreg` for registry operations.
 
 ## Features
 
