@@ -77,6 +77,7 @@ import os
 - PIL (Built Into Python)
 - pystray
 - requests
+- PyInstaller (Only used for building the .EXEs)
 
 ## Manual Run / Install steps
 
