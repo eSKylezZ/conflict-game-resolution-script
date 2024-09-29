@@ -21,7 +21,7 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Windows_ResolutionScript
           path: dist/resolution-script.exe
@@ -64,7 +64,7 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller resolution-script.spec
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: Windows_ResolutionScript
           path: dist/resolution-script.exe
