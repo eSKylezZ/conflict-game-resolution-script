@@ -1,5 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+datas = [
+    ('images/CD-BoxArt.jpg', 'images'),
+    ('images/CD2-BoxArt.jpg', 'images'),
+    ('images/Vietnam-BoxArt.jpg', 'images'),
+    ('images/Global-BoxArt.jpg', 'images')
+]
 
 a = Analysis(
     ['resolution-script.py'],
