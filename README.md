@@ -92,3 +92,4 @@ import os
 
 1. Download the correct build version for your operating system x64 for 64bit or x86 for 32bit
 2. Run the exe, You may need to run as admin as you are making changes to the windows registry
+   1. When running the EXE windows will warn its unsigned.
