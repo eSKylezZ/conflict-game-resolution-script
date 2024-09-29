@@ -79,7 +79,9 @@ import os
 - requests
 - PyInstaller (Only used for building the .EXEs)
 
-## Manual Run / Install steps
+## Running the script
+
+### Manual Run / Install steps
 
 1. Download & Install Python - https://www.python.org/downloads/
 2. Run the following command in CMD or Powershell, you may need to run the CLI as admin as you are making changes to the windows registry
@@ -88,8 +90,13 @@ import os
 4. Within the same directory as the downloaded script run the following command
    - python ./resolution-script.py
 
-## EXE Run
+### EXE Run
 
 1. Download the correct build version for your operating system x64 for 64bit or x86 for 32bit
 2. Run the exe, You may need to run as admin as you are making changes to the windows registry
    1. When running the EXE windows will warn its unsigned.
+
+
+### Example of Script
+
+![Example of script interface](/images/RI-Example.jpg "RI Example")
