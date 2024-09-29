@@ -37,8 +37,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dist/resolution-script-x64.exe
-          tag_name: ${{ github.event.head_commit.message }}
-          name: ${{ github.event.head_commit.message }}
+          tag_name: v1.0.0
+          name: Release v1.0.0
           body: |
             This release includes the following executables:
             - **resolution-script-x64.exe**: For 64-bit Windows
@@ -78,8 +78,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: dist/resolution-script-x86.exe
-          tag_name: ${{ github.event.head_commit.message }}
-          name: ${{ github.event.head_commit.message }}
+          tag_name: v1.0.0
+          name: Release v1.0.0
           body: |
             This release includes the following executables:
             - **resolution-script-x64.exe**: For 64-bit Windows
